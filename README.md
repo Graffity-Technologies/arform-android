@@ -1,38 +1,48 @@
-Sceneform SDK for Android
-=====================
-Copyright (c) 2018 Google Inc.  All rights reserved.
+# Fork from Google Sceneform v1.16.0 (Open source version)
 
-Sceneform is a 3D framework, with a physically based renderer, that's optimized for mobile, and that makes it easy for Java developers to build augmented reality apps.
+![status: active](https://img.shields.io/badge/status-active-green.svg)
 
-Please note, we do not accept pull requests.
+## Getting started with Sceneform 1.16.0
 
+Use the following steps to include and build the Sceneform 1.16.0 SDK with your
+app:
 
-## Getting Started
+1. Download `sceneform-android-sdk-1.16.0.zip` from the Sceneform SDK
+   [releases](https://github.com/google-ar/sceneform-android-sdk/releases/tag/v1.16.0)
+   page.
+2. Extract the `sceneformsrc` and `sceneformux` directories into your project's
+   top-level directory. The resulting directory structure should be similar to
+   the following:
+```
+project
++-- app
+|   +-- build.gradle
+|   +-- ...
++-- sceneformsrc
++-- sceneformux
++-- build.gradle
++-- settings.gradle
++-- ...
+```
 
-This repository contains Sceneform sample projects.
+3. Modify your project's `settings.gradle` to include the Sceneform projects:
+```
+include ':app'
 
-To get started with the Sceneform SDK, follow the ARCore [Android Quickstart](//developers.google.com/ar/develop/java/quickstart) guide.
+// Add these lines:
+include ':sceneform'
+project(':sceneform').projectDir=new File('sceneformsrc/sceneform')
 
+include ':sceneformux'
+project(':sceneformux').projectDir=new File('sceneformux/ux')
+```
 
-## API Reference
+4. Finally, add a reference to the Sceneform SDK to your app's `build.gradle`:
+```
+dependencies {
+    api project(":sceneformux")
+}
+```
 
-See the [Sceneform API Reference](//developers.google.com/sceneform/reference/com/google/ar/sceneform/package-summary).
-
-
-## Release Notes
-
-The SDK release notes are available on the [releases](//github.com/google-ar/sceneform-android-sdk/releases) page.
-
-
-## Terms & Conditions
-
-By downloading the Sceneform SDK for Android, you agree that the [Google APIs Terms of Service](//developers.google.com/terms/) governs your use thereof.
-
-
-## User privacy requirements
-
-You must disclose the use of Google Play Services for AR (ARCore) and how it
-collects and processes data, prominently in your application, easily accessible
-to users. You can do this by adding the following text on your main menu or
-notice screen: "This application runs on [Google Play Services for AR](//play.google.com/store/apps/details?id=com.google.ar.core) (ARCore),
-which is provided by Google LLC and governed by the [Google Privacy Policy](//policies.google.com/privacy)".
+To get started with the Sceneform SDK, check out the
+[Sceneform sample](https://github.com/google-ar/sceneform-android-sdk/tree/master/samples/gltf/app).
