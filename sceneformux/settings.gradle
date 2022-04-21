@@ -1,4 +1,22 @@
-include ':ux'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
 
 include ':sceneform'
+include ':ux'
+
 project(':sceneform').projectDir=new File('../sceneformsrc/sceneform')
