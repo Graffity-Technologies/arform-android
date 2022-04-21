@@ -105,7 +105,7 @@ public class GltfActivity extends AppCompatActivity {
         .setSource(
             this,
             Uri.parse(
-                "https://graffity-public-assets.s3.ap-southeast-1.amazonaws.com/3D/Parrot.glb"))
+                "https://graffity-public-assets.s3.ap-southeast-1.amazonaws.com/3D/Parrot-0.025.glb"))
         .setIsFilamentGltf(true)
         .build()
         .thenAccept(
