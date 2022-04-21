@@ -24,7 +24,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.ArraySet;
 import android.util.Log;
 import android.view.Gravity;
@@ -105,7 +105,7 @@ public class GltfActivity extends AppCompatActivity {
         .setSource(
             this,
             Uri.parse(
-                "https://storage.googleapis.com/ar-answers-in-search-models/static/Tiger/model.glb"))
+                "https://graffity-public-assets.s3.ap-southeast-1.amazonaws.com/3D/Parrot.glb"))
         .setIsFilamentGltf(true)
         .build()
         .thenAccept(
@@ -141,8 +141,10 @@ public class GltfActivity extends AppCompatActivity {
           model.setRenderable(renderable);
           model.select();
 
-          FilamentAsset filamentAsset = model.getRenderableInstance().getFilamentAsset();
-          if (filamentAsset.getAnimator().getAnimationCount() > 0) {
+            assert model.getRenderableInstance() != null;
+            FilamentAsset filamentAsset = model.getRenderableInstance().getFilamentAsset();
+            assert filamentAsset != null;
+            if (filamentAsset.getAnimator().getAnimationCount() > 0) {
             animators.add(new AnimationInstance(filamentAsset.getAnimator(), 0, System.nanoTime()));
           }
 
