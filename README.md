@@ -1,8 +1,8 @@
-# Fork from Google Sceneform v1.16.0 (Open source version)
+# Fork from Sceneform v1.16.0 (Open source version)
 
 ![status: active](https://img.shields.io/badge/status-active-green.svg)
 
-## Getting started with Sceneform 1.16.0
+## Getting started
 
 Use the following steps to include and build the Sceneform 1.16.0 SDK with your
 app:
