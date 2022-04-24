@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-include ':sceneform'
+//include ':sceneform'
 include ':ux'
 
-project(':sceneform').projectDir=new File('../sceneformsrc/sceneform')
+//project(':sceneform').projectDir=new File('../sceneformsrc/sceneform')

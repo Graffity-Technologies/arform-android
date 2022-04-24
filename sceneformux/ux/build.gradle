@@ -45,8 +45,8 @@ android {
 }
 
 dependencies {
-    // Use the Sceneform SDK built from the source files included in the sceneformsrc folder.
-    api 'com.graffity.android:arform:2.0.1'
+    api "com.google.ar:core:1.30.0"
+    implementation 'com.graffity.android:arform:2.0.1'
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
